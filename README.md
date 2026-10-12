@@ -58,4 +58,112 @@ My hands-on work focused on configuring the AWS infrastructure, deploying the ap
 
 ## Project Screenshots
 
-Screenshots and an architecture diagram will be added to document the final deployment.
+The following screenshots document the AWS infrastructure, application deployment, and testing process.
+
+### 1. AWS Network Setup
+
+**VPC Resource Map**
+
+Created a custom VPC with four subnets across two Availability Zones.
+
+![VPC Resource Map](screenshots/vpc-resource-map.png)
+
+**VPC Subnets**
+
+Configured two public subnets for the web servers and two private subnets for the database network.
+
+![VPC Subnets](screenshots/vpc-subnets.png)
+
+**Internet Gateway**
+
+Attached an Internet Gateway to the custom VPC to support internet connectivity for the public subnets.
+
+![Internet Gateway](screenshots/internet-gateway.png)
+
+**Public Route Table**
+
+Configured a route to the Internet Gateway for internet-bound traffic.
+
+![Public Route Table](screenshots/public-route.png)
+
+**Public Subnet Associations**
+
+Associated both public subnets with the public route table.
+
+![Public Subnet Associations](screenshots/public-route-subnets.png)
+
+**Private Route Table**
+
+Associated the two private subnets with a separate route table.
+
+![Private Route Table](screenshots/private-route.png)
+
+### 2. Security and Database
+
+**Security Groups**
+
+Created security groups to manage network access for the web servers, load balancer, and database.
+
+![Security Groups](screenshots/security-group.png)
+
+**RDS Private Network**
+
+Configured the RDS MySQL database without public access.
+
+![RDS Private Network](screenshots/rds-private-network.png)
+
+### RDS Connectivity
+
+Configured the database security group to allow access from the web server security group.
+
+![RDS Connectivity](screenshots/%20rds-connectivity.png)
+
+**MySQL Database Schema**
+
+Created the To-Do database and the Tasks table using SQL commands.
+
+![MySQL Tasks Schema](screenshots/mysql-tasks-schema.png)
+
+### 3. Application Deployment
+
+**EC2 Instances**
+
+Launched two web server instances across different Availability Zones and a Bastion Host for database administration.
+
+![EC2 Instances](screenshots/ec2-instances.png)
+
+**PM2 Application Status**
+
+Used PM2 to manage the Node.js application process and confirmed that it was online.
+
+![PM2 Online](screenshots/pm2-online.png)
+
+**API Testing**
+
+Tested the application API using curl and received a successful HTTP 200 response with task data.
+
+![API and RDS Test](screenshots/api-rds-test.png)
+
+### 4. Load Balancing and Final Testing
+
+**Application Load Balancer**
+
+Configured an internet-facing Application Load Balancer with an HTTP listener on port 80.
+
+![ALB Listener](screenshots/alb-listener.png)
+
+**Healthy Targets**
+
+Registered both EC2 web servers in the Target Group and confirmed that both passed their health checks.
+
+![Healthy Targets](screenshots/healthy-targets.png)
+
+**Final Application**
+
+Successfully accessed the To-Do List through the ALB DNS address and confirmed that the saved tasks were displayed.
+
+![To-Do Application](screenshots/todo-app-alb.png)
+
+### 5. Architecture Diagram
+
+The architecture diagram will be added here to illustrate the relationship between the VPC, public and private subnets, EC2 instances, ALB, and RDS MySQL database.
