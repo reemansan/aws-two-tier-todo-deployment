@@ -167,3 +167,20 @@ Successfully accessed the To-Do List through the ALB DNS address and confirmed t
 ### 5. Architecture Diagram
 
 The architecture diagram will be added here to illustrate the relationship between the VPC, public and private subnets, EC2 instances, ALB, and RDS MySQL database.
+
+
+## Future Improvements
+
+This project was built as a hands-on learning experience. In the future, I would like to improve it by:
+
+- **HTTPS:** Add an SSL/TLS certificate using AWS Certificate Manager.
+- **Security:** Restrict SSH access and allow web server traffic only from the ALB security group.
+- **Auto Scaling:** Automatically adjust the number of EC2 instances based on traffic.
+- **Monitoring:** Use Amazon CloudWatch to monitor application performance and resource usage.
+- **Infrastructure as Code:** Use Terraform or AWS CloudFormation to automate the infrastructure setup.
+
+## Project Status
+
+The application was successfully deployed and tested on AWS.
+
+After completing the project and saving the documentation, I deleted the AWS resources to avoid ongoing cloud costs. The live application is no longer available, but the screenshots above show the deployment and testing results.
