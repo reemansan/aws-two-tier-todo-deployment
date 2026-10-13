@@ -8,6 +8,10 @@ The goal was to practice AWS networking, application deployment, database connec
 
 The application allows users to add, view, update, and delete tasks.
 
+## Architecture Diagram
+
+![AWS Two-Tier Application Architecture](screenshots/aws-two-tier-architecture.png)
+
 ## AWS Services and Tools
 
 - **Amazon VPC:** Created a custom network with two public and two private subnets across two Availability Zones.
@@ -173,6 +177,7 @@ The architecture diagram will be added here to illustrate the relationship betwe
 
 This project was built as a hands-on learning experience. In the future, I would like to improve it by:
 
+- **High Availability:** Enable RDS Multi-AZ deployment to reduce the risk of database downtime if an Availability Zone fails.
 - **HTTPS:** Add an SSL/TLS certificate using AWS Certificate Manager.
 - **Security:** Restrict SSH access and allow web server traffic only from the ALB security group.
 - **Auto Scaling:** Automatically adjust the number of EC2 instances based on traffic.
